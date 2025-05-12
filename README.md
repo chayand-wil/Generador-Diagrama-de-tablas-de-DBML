@@ -1,37 +1,29 @@
 # SQL to DBML Converter
 
-**Convierte esquemas SQL a formato DBML** para visualización en [dbdiagram.io](https://dbdiagram.io/).
+Este script convierte esquemas SQL (`CREATE TABLE` con `FOREIGN KEY`) al formato [DBML](https://www.dbml.org/) usado por herramientas como [DBDiagram.io](https://dbdiagram.io/).
 
-## 📦 Instalación
+---
+
+## 🧠 ¿Qué hace?
+
+- Lee texto `sql` con definiciones de tablas y claves foráneas.
+- Extrae las tablas, campos y relaciones.
+- Genera la representación en **DBML**.
+- Puedes exportar el resultado a un archivo o imprimirlo en consola.
+
+---
+
+## 🛠️ Requisitos
+
+- Python 3.6 o superior
+
+---
+
+## 🚀 Uso
+
+### 1. Ejecutar desde archivo `.sql`
+
 ```bash
-git clone https://github.com/tu-usuario/sql-to-dbml.git
-cd sql-to-dbml
-
-
-Convertir archivo SQL
-python3 sql_to_dbml.py esquema.sql -o salida.dbml
-
-Pegar SQL directamente
-python3 sql_to_dbml.py
-# Pega tu SQL y presiona Ctrl+D (Linux/Mac) o Ctrl+Z+Enter (Windows)
-
-EJEMPLO
-Entrada SQL
-CREATE TABLE users (
-    id INT PRIMARY KEY,
-    name VARCHAR(100)
-);
-
-Salida DBML:
-Table users {
-  id INT
-  name VARCHAR(100)
-}
-
-Características
-✅ Extrae tablas, campos y relaciones
-✅ Soporta: INT, VARCHAR, DECIMAL, etc.
-✅ Maneja claves foráneas (FOREIGN KEY)
-✅ Entrada desde archivo o terminal
-
-
+ 
+python3 generador_diag_tablas.py
+Luego pega tu SQL directamente y presiona Ctrl+D (Linux/macOS) o Ctrl+Z y Enter (Windows) para procesar.
